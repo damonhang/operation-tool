@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active:
+      - common
+      - dev
+  datasource:
+    url: jdbc:mysql://47.106.210.62:3306/learn
+    username: root
+    password: q1w2e3r4#
+    driver-class: com.mysql.jdbc.Driver
+devName: devname

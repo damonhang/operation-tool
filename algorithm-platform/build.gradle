@@ -1,0 +1,25 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.13.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.damonhang'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

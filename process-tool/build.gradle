@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'com.damonhang'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+dependencies {
+    //implementation 'org.activiti:activiti-spring-boot-starter-basic:6.0.0'
+    implementation 'mysql:mysql-connector-java'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task copyCommonConfig {
+    doFirst {
+        println 'Hello world!'
+        copy {
+            from("../common-resources/application-common.yml")
+            into("src/main/resources")
+        }
+    }
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.hasTask(":release")) {
+        version = '1.0'
+    } else {
+        version = '1.0-SNAPSHOT'
+    }
+}
+
+compileJava.dependsOn copyCommonConfig
+
+

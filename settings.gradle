@@ -13,3 +13,8 @@ pluginManagement {
 	}
 }
 rootProject.name = 'operation'
+
+include 'test-tool'
+include 'algorithm-platform'
+include 'process-tool'
+

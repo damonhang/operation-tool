@@ -2,27 +2,34 @@ plugins {
     id 'java'
 }
 
+ext {
+    activitiVersion = '6.0.0'
+}
+
 group 'com.damonhang'
 version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-
 dependencies {
-    //implementation 'org.activiti:activiti-spring-boot-starter-basic:6.0.0'
+    implementation "org.activiti:activiti-spring-boot-starter-basic:$activitiVersion"
     implementation 'mysql:mysql-connector-java'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-task copyCommonConfig {
-    doFirst {
-        println 'Hello world!'
-        copy {
-            from("../common-resources/application-common.yml")
-            into("src/main/resources")
-        }
-    }
+//task copyCommonConfig {
+//    doFirst {
+//        println 'Hello world!'
+//        copy {
+//            from("../common-resources/application-common.yml")
+//            into("src/main/resources")
+//        }
+//    }
+//}
+task('copyCommonConfig', type: Copy) {
+    from "../common-resources/application-common.yml"
+    into "src/main/resources"
 }
 
 gradle.taskGraph.whenReady { taskGraph ->

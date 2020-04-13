@@ -8,4 +8,3 @@ spring:
     username: root
     password: q1w2e3r4#
     driver-class: com.mysql.jdbc.Driver
-devName: devname

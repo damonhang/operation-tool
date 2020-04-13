@@ -1,13 +1,13 @@
 package com.damon.process;
 
 
-//import org.activiti.spring.boot.SecurityAutoConfiguration;
+import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class ProcessApplication {
 
   public static void main(String[] args) {

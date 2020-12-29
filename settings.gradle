@@ -18,4 +18,5 @@ include 'test-tool'
 include 'algorithm-platform'
 include 'process-tool'
 include 'operation-tool'
+include 'cloud'
 
